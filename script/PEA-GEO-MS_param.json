@@ -1,0 +1,18 @@
+[{
+		"codice_progetto" : "PEA-GEO-MS",
+		"tipo_progetto" : "Manual-Slide",
+		"titolo_progetto" : "GEOGRAFIA : I LAGHI",
+		"window_title" : "Pearson - MANUAL SLIDE SHOW - I Laghi",
+		"traccia_audio" : "media\/audio\/laghi",
+		"autoplay" : "No",
+		"categoy" : "Geografia, Laghi, Scolastica",
+		"colore_sfondo" : "#000000",
+		"thumbnail" : "Open",
+		"visible_dida" : "Yes",
+		"transition" : "scrollLeft",
+		"loop_sound" : "No",
+		"end_sound" : "End",
+		"zoom" : "Yes",
+		"player" : "No"
+	}
+]

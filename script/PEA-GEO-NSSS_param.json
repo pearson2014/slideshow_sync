@@ -1,0 +1,18 @@
+[{
+		"codice_progetto" : "PEA-GEO-NSSS",
+		"tipo_progetto" : "No-Sync-Slide-Show",
+		"titolo_progetto" : "GEOGRAFIA : I LAGHI",
+		"window_title" : "Pearson - NO SYNC SLIDE SHOW - I Laghi",
+		"traccia_audio" : "media\/audio\/stop",
+		"autoplay" : "Yes",
+		"categoy" : "Geografia, Laghi, Scolastica",
+		"colore_sfondo" : "#000000",
+		"thumbnail" : "Collapsed",
+		"visible_dida" : "Yes",
+		"transition" : "ScrollLeft",
+		"loop_sound" : "Yes",
+		"end_sound" : "End",
+		"zoom" : "Yes",
+		"player" : "Yes"
+	}
+]

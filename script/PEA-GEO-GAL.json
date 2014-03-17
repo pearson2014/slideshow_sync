@@ -1,0 +1,50 @@
+[{
+		"image" : "media\/img\/big\/0.jpg",
+		"thumb" : "media\/img\/small\/0.jpg",
+		"title" : null,
+		"description" : null,
+		"sound" : null
+	}, {
+		"image" : "media\/img\/big\/1.jpg",
+		"thumb" : "media\/img\/small\/1.jpg",
+		"title" : "CLASSIFICHIAMO I LAGHI",
+		"description" : "I <b>laghi<\/b>, bacini in cui l'acqua si accumula, possono essere grandi o piccoli, rotondi o allungati, di acqua dolce o acqua salata. Essi per\u00f2 non vengono classificati in base alla forma o alle dimensioni, ma in base al <b>processo<\/b> che li ha generati.",
+		"sound" : null
+	}, {
+		"image" : "media\/img\/big\/2.jpg",
+		"thumb" : "media\/img\/small\/2.jpg",
+		"title" : "I LAGHI VULCANICI",
+		"description" : "I <b>laghi vulcanici<\/b> si formano quando l'acqua piovana si accumula nei crateri di antichi vulcani spenti. Sono facilmente riconoscibili per la tipica <b>forma circolare<\/b>.<br>Oltre al lago di Bracciano, che puoi vedere in questa foto da satellite, in Italia sono vulcanici i laghi di Albano, Vico e Bolsena.",
+		"sound" : null
+	}, {
+		"image" : "media\/img\/big\/3.jpg",
+		"thumb" : "media\/img\/small\/3.jpg",
+		"title" : "I LAGHI GLACIALI",
+		"description" : "I <b>laghi glaciali<\/b> hanno origine quando l'acqua si accumula nelle valli scavate da antichi ghiacciai ormai scomparsi. La loro  <b>forma \u00e8 allungata<\/b> e contorta e segue l'andamento delle valli.<br>Oltre al lago di Garda, nella foto, in Italia sono glaciali i laghi prealpini Maggiore, <br>di Como, d'Iseo e d'Orta.",
+		"sound" : null
+	}, {
+		"image" : "media\/img\/big\/4.jpg",
+		"thumb" : "media\/img\/small\/4.jpg",
+		"title" : "I LAGHI CARSICI",
+		"description" : "I <b>laghi carsici<\/b> occupano le cavit\u00e0 scavate dalle acque in particolari tipi di rocce.<br>Nella foto i laghi presenti nel parco nazionale di Plitvice, in Croazia. In questa regione le acque hanno scavato e modellato le rocce formando numerosi laghi carsici collegati tra loro da cascate.",
+		"sound" : null
+	}, {
+		"image" : "media\/img\/big\/5.jpg",
+		"thumb" : "media\/img\/small\/5.jpg",
+		"title" : "I LAGHI DI CORRUGAMENTO",
+		"description" : "I <b>laghi di corrugamento<\/b> o <b>tettonici<\/b> sono dovuti ad acque che si raccolgono in cavit\u00e0 che si sono formate a causa di spostamenti della crosta terrestre. Le loro dimensioni sono spesso notevoli e possono essere molto  <b>profondi<\/b>.<br>Sono laghi di corrugamento il lago Bajkal, in Siberia, e i grandi laghi africani Rodolfo e Tanganica. Anche il Mar Morto, il grande lago salato che puoi osservare in questa foto da satellite, ha origine tettonica.",
+		"sound" : null
+	}, {
+		"image" : "media\/img\/big\/6.jpg",
+		"thumb" : "media\/img\/small\/6.jpg",
+		"title" : "I LAGHI RELITTI",
+		"description" : "I <b>laghi relitti<\/b> sono bacini di <b>acqua salata<\/b>, a volte molto grandi, che un tempo erano collegati al mare, ma ne sono rimasti separati.<br>Sono laghi relitti il Lago d'Aral, in Asia centrale, e il Mar Caspio, al confine tra Asia ed Europa, riprodotto nella fotografia.",
+		"sound" : null
+	}, {
+		"image" : "media\/img\/big\/7.jpg",
+		"thumb" : "media\/img\/small\/7.jpg",
+		"title" : "I LAGHI ARTIFICIALI",
+		"description" : "I <b>laghi artificiali<\/b> sono dovuti all'azione dell'uomo, che sbarra il corso di un fiume o di un torrente con una diga intrappolandone le acque. In Italia i laghi artificiali sono molto diffusi perch\u00e8 l'energia delle loro acque viene impiegata per la produzione di <b>corrente elettrica<\/b>.",
+		"sound" : null
+	}
+]

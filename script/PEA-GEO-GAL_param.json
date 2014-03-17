@@ -1,0 +1,18 @@
+[{
+		"codice_progetto" : "PEA-GEO-GAL",
+		"tipo_progetto" : "Gallery",
+		"titolo_progetto" : "GEOGRAFIA : I LAGHI",
+		"window_title" : "Pearson - Gallery - I Laghi",
+		"traccia_audio" : null,
+		"autoplay" : "No",
+		"categoy" : "Geografia, Laghi, Scolastica",
+		"colore_sfondo" : "#000000",
+		"thumbnail" : "Collapsed",
+		"visible_dida" : "Yes",
+		"transition" : "scrollLeft",
+		"loop_sound" : "No",
+		"end_sound" : "End",
+		"zoom" : "Yes",
+		"player" : "No"
+	}
+]

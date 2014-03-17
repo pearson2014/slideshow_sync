@@ -1,0 +1,50 @@
+[{
+		"image" : "media\/img\/big\/intro.png",
+		"thumb" : "media\/img\/small\/intro_small.jpg",
+		"title" : null,
+		"description" : null,
+		"sound" : "00.00"
+	}, {
+		"image" : "media\/img\/big\/amap_b01bis_01.png",
+		"thumb" : "media\/img\/small\/amap_b01bis_01_small.jpg",
+		"title" : null,
+		"description" : null,
+		"sound" : "02.87"
+	}, {
+		"image" : "media\/img\/big\/amap_b01bis_02.png",
+		"thumb" : "media\/img\/small\/amap_b01bis_02_small.jpg",
+		"title" : null,
+		"description" : null,
+		"sound" : "05.97"
+	}, {
+		"image" : "media\/img\/big\/amap_b01bis_03.png",
+		"thumb" : "media\/img\/small\/amap_b01bis_03_small.jpg",
+		"title" : null,
+		"description" : null,
+		"sound" : "14.49"
+	}, {
+		"image" : "media\/img\/big\/amap_b01bis_04.png",
+		"thumb" : "media\/img\/small\/amap_b01bis_04_small.jpg",
+		"title" : null,
+		"description" : null,
+		"sound" : "22.95"
+	}, {
+		"image" : "media\/img\/big\/amap_b01bis_05.png",
+		"thumb" : "media\/img\/small\/amap_b01bis_05_small.jpg",
+		"title" : null,
+		"description" : null,
+		"sound" : "26.32"
+	}, {
+		"image" : "media\/img\/big\/amap_b01bis_06.png",
+		"thumb" : "media\/img\/small\/amap_b01bis_06_small.jpg",
+		"title" : null,
+		"description" : null,
+		"sound" : "30.23"
+	}, {
+		"image" : "media\/img\/big\/amap_b01bis_07.png",
+		"thumb" : "media\/img\/small\/amap_b01bis_07_small.jpg",
+		"title" : null,
+		"description" : null,
+		"sound" : "34.04"
+	}
+]

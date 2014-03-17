@@ -1,0 +1,18 @@
+[{
+		"codice_progetto" : "PEA-SCI-145",
+		"tipo_progetto" : "Audio-Map",
+		"titolo_progetto" : "SCIENZE: Le Caratteristiche dei viventi",
+		"window_title" : "Pearson - Audio Mappa - Le caratteristiche dei viventi",
+		"traccia_audio" : "media\/audio\/amap_b_01bis",
+		"autoplay" : "Yes",
+		"categoy" : "Scienze, Scolastica, AudioMappe",
+		"colore_sfondo" : "#ffffff",
+		"thumbnail" : "Open",
+		"visible_dida" : "No",
+		"transition" : "simpleFade",
+		"loop_sound" : "No",
+		"end_sound" : "End",
+		"zoom" : "No",
+		"player" : "Yes"
+	}
+]

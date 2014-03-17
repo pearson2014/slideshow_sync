@@ -1,0 +1,12 @@
+[ { "autoplay" : false,
+    "codice_progetto" : "PEA-GEO-145",
+    "colore_sfondo" : "#000000",
+    "dida" : true,
+    "tag" : "Geografia, Laghi, Scolastica",
+    "thumbnail" : true,
+    "titolo_progetto" : "GEOGRAFIA : I LAGHI",
+    "traccia_audio" : "media/audio/laghi",
+    "window_title" : "test title",
+    "transition" : "scrollLeft",
+    "loop_sound" : false
+  } ]

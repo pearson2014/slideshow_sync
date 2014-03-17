@@ -1,0 +1,144 @@
+html,body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+a {
+	color: #09f;
+}
+a:hover {
+	text-decoration: none;
+}
+.ui-page {
+	background: none;
+}
+#back_to_camera {
+	background: rgba(255,255,255,.9);
+	clear: both;
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	padding: 20px;
+	position: relative;
+	z-index: 1;
+}
+.fluid_container {
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 0;
+}
+#camera_wrap_4 {
+	bottom: 60px;
+	height: auto;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+.camera_bar {
+	z-index: 2;
+}
+.camera_thumbs {
+	/* margin-top: -100px; */
+	position: relative;
+	z-index: 1;
+}
+.camera_thumbs_cont {
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+.camera_overlayer {
+	opacity: .1;
+}
+.main_bar .jp-volume-bar {
+    background-color: #FFFFFF;
+    border: 1px solid #979797;
+    cursor: pointer;
+    height: 5px;
+    left: 125px;
+    margin-top: -2px;
+    position: absolute;
+    top: 50%;
+    width: 90px;
+    z-index: 2;
+    border-radius: 0;
+}
+.main_bar .ui-slider-range {
+    background: none repeat 0 0 #7D7D7D;
+    cursor: pointer;
+    height: 5px;
+    width: 0;
+    z-index: 2;
+    border-radius: 0;
+}
+.main_bar .left_icon {
+	margin-left: 100px;
+	position: absolute;
+	top: 50%;
+	margin-top: -8px;
+	z-index: 2;
+	cursor: pointer;
+}
+.main_bar .right_icon {
+	margin-left: 182px;
+	position: absolute;
+	top: 50%;
+	margin-top: -12px;
+	margin-left: 220px;
+	position: absolute;
+	z-index: 2;
+	cursor: pointer;
+}
+
+
+body .wrap-img {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999999901;
+}
+/*
+@media only screen and (min-width: 1440px) {
+body .wrap-img .wrap-all {
+    margin: auto;
+    width: 1500px;
+}
+}
+*/
+body .wrap-img .wrap-all {
+    position: relative;
+}
+body .wrap-img .wrap-all .cont-img {
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+body .wrap-img .wrap-all img {
+    max-width: none;
+    vertical-align: middle;
+}
+body .wrap-img .wrap-all .cont-carousel {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    z-index: 999999902 !important;
+}
+body .wrap-img .wrap-all .close-wrap {
+    background: url("../images/close-wrap.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+    cursor: pointer;
+    height: 35px;
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    width: 35px;
+    z-index: 999999902 !important;
+}
