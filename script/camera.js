@@ -4,11 +4,7 @@
 ;(function($){$.fn.camera = function(opts, callback) {
 	
 	var defaults = {
-<<<<<<< HEAD
-		alignment			: 'center', //topLeft, topCenter, topRight, centerLeft, center, centerRight, bottomLeft, bottomCenter, bottomRight   prova valerio
-=======
-		alignment			: 'center', //topLeft, topCenter, topRight, centerLeft, center, centerRight, bottomLeft, bottomCenter, bottomRight   prova simone
->>>>>>> 8d23562fbcdcab609506efe4abb5e38c349db8c8
+		alignment			: 'center', //topLeft, topCenter, topRight, centerLeft, center, centerRight, bottomLeft, bottomCenter, bottomRight
 		
 		
 		autoAdvance			: true,	//true, false
@@ -96,7 +92,7 @@
 
 		onLoaded			: function() {  },	//this callback is invoked when the image on a slide has completely loaded
 		
-		onStartLoading		: function() {  },	//this callback is invoked when the image on a slide start loading
+		onStartLoading		: function() {  /* if($('.camera_fakehover .camera_next').is(':visible') == false) {clearTimeout(pause_audio); pausesound(); elem.addClass('paused');} */ },	//this callback is invoked when the image on a slide start loading
 		
 		onStartTransition	: function() {  }	//this callback is invoked when the transition effect starts
 
@@ -874,7 +870,7 @@
 		    	
 		    	if(autoAdv == true){
 					//console.log('cleartiemout')
-			    	clearTimeout(pause_audio)
+			    	clearTimeout(pause_audio);
 			    	pausesound();
 			    	elem.addClass('paused');
 		    	}
@@ -2235,9 +2231,11 @@
 
 				if($(prevNav).length){
 					$(prevNav).click(function(){
-						pausesound();
+						//alert('entra');
 						window.changeSound = true; 
 						if(!elem.hasClass('camerasliding')){
+							clearTimeout(pause_audio);
+							pausesound();
 							var idNum = parseFloat($('.cameraSlide.cameracurrent',target).index());
 							clearInterval(u);
 							imgFake();
@@ -2255,9 +2253,10 @@
 			
 				if($(nextNav).length){
 					$(nextNav).click(function(){
-						pausesound();
 						window.changeSound = true;
 						if(!elem.hasClass('camerasliding')){
+							clearTimeout(pause_audio);
+							pausesound();
 							var idNum = parseFloat($('.cameraSlide.cameracurrent',target).index()); 
 							clearInterval(u);
 							imgFake();
@@ -2334,7 +2333,7 @@
 							var curNum = parseFloat($('.cameracurrent',target).index());
 							if(idNum!=curNum) {
 								//console.log('cleartiemout')
-								clearTimeout(pause_audio)
+								clearTimeout(pause_audio);
 								pausesound();
 								clearInterval(u);
 								imgFake();
