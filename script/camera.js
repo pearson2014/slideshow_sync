@@ -4,7 +4,7 @@
 ;(function($){$.fn.camera = function(opts, callback) {
 	
 	var defaults = {
-		alignment			: 'center', //topLeft, topCenter, topRight, centerLeft, center, centerRight, bottomLeft, bottomCenter, bottomRight   prova
+		alignment			: 'center', //topLeft, topCenter, topRight, centerLeft, center, centerRight, bottomLeft, bottomCenter, bottomRight   prova valerio
 		
 		
 		autoAdvance			: true,	//true, false
