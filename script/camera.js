@@ -4,7 +4,11 @@
 ;(function($){$.fn.camera = function(opts, callback) {
 	
 	var defaults = {
+<<<<<<< HEAD
 		alignment			: 'center', //topLeft, topCenter, topRight, centerLeft, center, centerRight, bottomLeft, bottomCenter, bottomRight   prova valerio
+=======
+		alignment			: 'center', //topLeft, topCenter, topRight, centerLeft, center, centerRight, bottomLeft, bottomCenter, bottomRight   prova simone
+>>>>>>> 8d23562fbcdcab609506efe4abb5e38c349db8c8
 		
 		
 		autoAdvance			: true,	//true, false
