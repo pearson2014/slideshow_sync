@@ -142,3 +142,15 @@ body .wrap-img .wrap-all .close-wrap {
     width: 35px;
     z-index: 999999902 !important;
 }
+body .wrap-img .wrap-play {
+	margin: auto;
+    min-height: 100%;
+    position: relative;
+    width: 197px;
+}
+body .wrap-img .wrap-play img {
+	position:absolute;
+    top:50%;
+    left: 0;
+    cursor: pointer;
+}

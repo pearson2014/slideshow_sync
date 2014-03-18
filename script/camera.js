@@ -1380,7 +1380,7 @@
 				fx = 'simpleFade';
 				slideOn = 'next';
 				easing = '';
-				transPeriod = 500;
+				transPeriod = 1000;
 				$(elem).addClass('camerastarted')
 			}
 	

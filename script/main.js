@@ -2,6 +2,8 @@ var zoom='';
 var audio='';
 var loop=0;
 var endSound= '';
+var endReplay= true;
+
 function getUrlVars()
 {
     var vars = [], hash;
@@ -204,6 +206,18 @@ $(document).ready(function(){
 			  if(endSound == true){
 				  $("#jquery_jplayer_1").on($.jPlayer.event.ended, function() {
 				    $('.camera_wrap .camera_src').addClass('paused');
+				    if(endReplay == true) {
+					  var wrapImg= '<div class="wrap-img"><div class="wrap-play"><img src="images/event-play.png" /></div></div>';
+					  $('body').append(wrapImg);
+					  var $img = $('body .wrap-img .wrap-play img');
+					  var h = $img.height();
+					  $img.css('margin-top', + h / -2 + "px");
+					  
+					  $('body').on('click', '.wrap-img .wrap-play img', function(event){
+						  $('.camera_thumbs_cont ul li:first img').trigger('click');
+						  $('.wrap-img').remove();
+					  });
+					}	
 				  });
 				  
 				  $("#jquery_jplayer_1").on($.jPlayer.event.playing, function() {
