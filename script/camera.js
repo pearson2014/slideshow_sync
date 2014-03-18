@@ -90,7 +90,7 @@
 
 		onEndTransition		: function() {  },	//this callback is invoked when the transition effect ends
 
-		onLoaded			: function() {  },	//this callback is invoked when the image on a slide has completely loaded
+		onLoaded			: function() { },	//this callback is invoked when the image on a slide has completely loaded
 		
 		onStartLoading		: function() {  /* if($('.camera_fakehover .camera_next').is(':visible') == false) {clearTimeout(pause_audio); pausesound(); elem.addClass('paused');} */ },	//this callback is invoked when the image on a slide start loading
 		
@@ -829,7 +829,7 @@
 					resizeImage();
 				});
 			}
-		}); 
+		});
 	
 		$('.camera_commands').on('click', '.camera_play', function(){
 			autoAdv = true;
@@ -853,13 +853,15 @@
 			$('body').addClass('zoom-pan');
 		
 			$('body').on('click', '.wrap-img .wrap-all .close-wrap', function () {
-				if(autoAdv == true){
+				/*
+if(autoAdv == true){
 					var gap= (parseFloat($('li.cameracurrent').next().attr('data-sound')) - parseFloat($('#jquery_jplayer_1').data().jPlayer.status.currentTime)) * 1000;	
 			        playsound($('#jquery_jplayer_1').data().jPlayer.status.currentTime);	
 			        $("#jquery_jplayer_1").jPlayer("play");
 					pause_audio=setTimeout(function(){pausesound();}, gap);
 					elem.removeClass('paused');
 				}
+*/
 				
 				$('.wrap-img').remove();
 				$(".panzoom").panzoom('destroy');
@@ -868,12 +870,13 @@
 		    
 		    $('.camera_wrap').on('click', '.cameraSlide.cameracurrent img', function(event){
 		    	
-		    	if(autoAdv == true){
-					//console.log('cleartiemout')
+		    	/*
+if(autoAdv == true){
 			    	clearTimeout(pause_audio);
 			    	pausesound();
 			    	elem.addClass('paused');
 		    	}
+*/
 		    	
 		    	if($(event.target).is($(this))){
 			    	var urlImg= $(this).attr('src');
@@ -1114,12 +1117,21 @@
 					$('ul', thumbs).width($('ul > li', thumbs).length * $('ul > li', thumbs).outerWidth());
 					if($(thumbs).length && !$(pagination).lenght) {
 						wrap.css({marginBottom:$(thumbs).outerHeight()});
+						if(thumbnailCollapse == true){
+							thumbnailsSize = $('#camera_wrap_4').css('marginBottom');
+							wrap.css({marginBottom:0});
+						}
+						
 					}
 					thumbnailVisible();
 					/*I repeat this two lines because of a problem with iPhones*/
 					$('ul', thumbs).width($('ul > li', thumbs).length * $('ul > li', thumbs).outerWidth());
 					if($(thumbs).length && !$(pagination).lenght) {
 						wrap.css({marginBottom:$(thumbs).outerHeight()});
+						if(thumbnailCollapse == true){
+							thumbnailsSize = $('#camera_wrap_4').css('marginBottom');
+							wrap.css({marginBottom:0});
+						}
 					}
 					/*...*/
 				}

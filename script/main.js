@@ -3,6 +3,8 @@ var audio='';
 var loop=0;
 var endSound= '';
 var endReplay= true;
+var thumbnail = '';
+var thumbnailCollapse = true;
 
 function getUrlVars()
 {
@@ -88,8 +90,8 @@ $(document).ready(function(){
 		        var coloreSfondo= impostazioniData.colore_sfondo;
 		        var dida= impostazioniData.dida;
 		        var tag= impostazioniData.tag;
-		        var thumbnail= impostazioniData.thumbnail;
-			    if (thumbnail == "Collapsed") {
+		        thumbnail= impostazioniData.thumbnail;
+			    if (thumbnail == "Hide") {
 					thumbnail=false;
 				} else {
 					thumbnail=true;
