@@ -6,6 +6,8 @@ var endReplay= true;
 var thumbnail = '';
 var thumbnailCollapse = true;
 
+var dataTime='';
+
 function getUrlVars()
 {
     var vars = [], hash;
@@ -142,7 +144,7 @@ $(document).ready(function(){
 					autoAdvance: autoplay,
 					onStartTransition: function() { 
 					if (tipoProgetto != "No-Sync-Slide-Show") {
-					clearTimeout(pause_audio)
+					clearTimeout(pause_audio);
 					//currentSecond = parseFloat($('li.cameracurrent').attr('data-sound')); 
 					
 					//playsound(currentSecond);
@@ -164,7 +166,12 @@ $(document).ready(function(){
 							if (!isNaN(gap)) {
 								
 								pause_audio=setTimeout(function(){pausesound(currentSecond);}, gap);
+							}else{
+								//pause_audio=setTimeout(function(){pausesound(currentSecond);}, dataTime);
+								//alert(dataTime)
 							}
+							
+							//console.log(gap);
 							
 							
 					        playsound(currentSecond);
