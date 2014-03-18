@@ -853,15 +853,17 @@
 			$('body').addClass('zoom-pan');
 		
 			$('body').on('click', '.wrap-img .wrap-all .close-wrap', function () {
-				/*
+				
 if(autoAdv == true){
+					clearTimeout(pause_audio);
 					var gap= (parseFloat($('li.cameracurrent').next().attr('data-sound')) - parseFloat($('#jquery_jplayer_1').data().jPlayer.status.currentTime)) * 1000;	
-			        playsound($('#jquery_jplayer_1').data().jPlayer.status.currentTime);	
-			        $("#jquery_jplayer_1").jPlayer("play");
+			        //playsound($('#jquery_jplayer_1').data().jPlayer.status.currentTime);	
+			        //$("#jquery_jplayer_1").jPlayer("play");
+					
 					pause_audio=setTimeout(function(){pausesound();}, gap);
 					elem.removeClass('paused');
 				}
-*/
+
 				
 				$('.wrap-img').remove();
 				$(".panzoom").panzoom('destroy');
@@ -871,8 +873,8 @@ if(autoAdv == true){
 		    $('.camera_wrap').on('click', '.cameraSlide.cameracurrent img', function(event){
 					clearTimeout(pause_audio);
 					var gap= (parseFloat($('li.cameracurrent').next().attr('data-sound')) - parseFloat($('#jquery_jplayer_1').data().jPlayer.status.currentTime)) * 1000;	
-					pause_audio=setTimeout(function(){pausesound();}, gap);
-					elem.addClass('paused');
+					pause_audio=setTimeout(function(){pausesound();elem.addClass('paused');}, gap);
+					
 				
 				
 				
