@@ -854,7 +854,7 @@
 		
 			$('body').on('click', '.wrap-img .wrap-all .close-wrap', function () {
 				
-if(autoAdv == true){
+				if(autoAdv == true){
 					clearTimeout(pause_audio);
 					var gap= (parseFloat($('li.cameracurrent').next().attr('data-sound')) - parseFloat($('#jquery_jplayer_1').data().jPlayer.status.currentTime)) * 1000;	
 			        //playsound($('#jquery_jplayer_1').data().jPlayer.status.currentTime);	
@@ -871,23 +871,13 @@ if(autoAdv == true){
 			});
 		    
 		    $('.camera_wrap').on('click', '.cameraSlide.cameracurrent img', function(event){
+		    
+	    		if(autoAdv == true){
 					clearTimeout(pause_audio);
 					var gap= (parseFloat($('li.cameracurrent').next().attr('data-sound')) - parseFloat($('#jquery_jplayer_1').data().jPlayer.status.currentTime)) * 1000;	
 					pause_audio=setTimeout(function(){pausesound();elem.addClass('paused');}, gap);
-					
-				
-				
-				
-				
-				
-		    	/*
-if(autoAdv == true){
-			    	clearTimeout(pause_audio);
-			    	pausesound();
-			    	elem.addClass('paused');
-		    	}
-*/
-		    	
+				}
+						    	
 		    	if($(event.target).is($(this))){
 			    	var urlImg= $(this).attr('src');
 				    var wrapImg= '<div class="wrap-img"><div class="wrap-all"><div class="close-wrap"></div><div class="cont-carousel"><ul></ul></div><div class="cont-img"><img class="panzoom lazy" data-original="'+urlImg+'" /></div></div></div>';
