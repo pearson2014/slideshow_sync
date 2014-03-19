@@ -144,42 +144,28 @@ $(document).ready(function(){
 					autoAdvance: autoplay,
 					onStartTransition: function() { 
 					if (tipoProgetto != "No-Sync-Slide-Show") {
-					clearTimeout(pause_audio);
-					//currentSecond = parseFloat($('li.cameracurrent').attr('data-sound')); 
-					
-					//playsound(currentSecond);
-					//onLoaded: function() { 
-						//alert(changeSound);
-					  //if (changeSound == true) {
-					   // window.changeSound = false;
-					   
-					   
-					    
-						currentSecond = parseFloat($('li.cameracurrent').attr('data-sound')); 
 						
-					    if (isNaN(currentSecond)) {currentSecond = 0;}
-					    if ($('.camera_play').css('display') == 'none' || ($('#jquery_jplayer_1').data().jPlayer.status.paused == false)){
-							
-							var gap= (parseFloat($('li.cameracurrent').next().attr('data-sound')) - parseFloat($('li.cameracurrent').attr('data-sound'))) * 1000;
-							gap=parseInt(gap);
-							
-							if (!isNaN(gap)) {
-								
-								pause_audio=setTimeout(function(){pausesound(currentSecond);}, gap);
-							}else{
-								//pause_audio=setTimeout(function(){pausesound(currentSecond);}, dataTime);
-								//alert(dataTime)
-							}
-							
-							//console.log(gap);
-							
-							
-					        playsound(currentSecond);
-							
-					    }else {
-					        pausesound(currentSecond);
-					    }
-					  //}
+								clearTimeout(pause_audio);
+								currentSecond = parseFloat($('li.cameracurrent').attr('data-sound')); 
+								if (isNaN(currentSecond)) {currentSecond = 0;}
+								if ($('.camera_play').css('display') == 'none' || ($('#jquery_jplayer_1').data().jPlayer.status.paused == false)){
+									var gap= (parseFloat($('li.cameracurrent').next().attr('data-sound')) - parseFloat($('li.cameracurrent').attr('data-sound'))) * 1000;
+									gap=parseInt(gap);
+									if (!isNaN(gap)) {
+										
+										pause_audio=setTimeout(function(){pausesound(currentSecond);}, gap);
+										
+									}else{
+										//pause_audio=setTimeout(function(){pausesound(currentSecond);}, dataTime);
+										//alert(dataTime)
+									}
+									
+									playsound(currentSecond);
+								}else {
+									pausesound(currentSecond);
+								}
+						 
+					
 					   } else {
 						if (loop == 0) {
 						playsound();
@@ -270,7 +256,6 @@ $(document).ready(function(){
    $('.main_bar').on('click', '.camera_stop', function(){			
 		clearTimeout(pause_audio)
 	    pausesound();			
-		
     });
 	
 });

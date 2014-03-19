@@ -782,7 +782,7 @@
 		}
 	
 		$('.camera_commands').on('click', '.camera_stop', function(){
-			autoAdv = false;
+			//autoAdv = false;
 			elem.addClass('paused');
 			if($('.camera_stop').length){
 				$('.camera_stop').hide()
@@ -832,7 +832,7 @@
 		});
 	
 		$('.camera_commands').on('click', '.camera_play', function(){
-			autoAdv = true;
+			//autoAdv = true;
 			elem.removeClass('paused');
 			if($('.camera_play').length){
 				$('.camera_play').hide();
@@ -872,11 +872,11 @@
 		    
 		    $('.camera_wrap').on('click', '.cameraSlide.cameracurrent img', function(event){
 		    
-	    		if(autoAdv == true){
+	    		//if(autoAdv == true){
 					clearTimeout(pause_audio);
 					var gap= (parseFloat($('li.cameracurrent').next().attr('data-sound')) - parseFloat($('#jquery_jplayer_1').data().jPlayer.status.currentTime)) * 1000;	
 					pause_audio=setTimeout(function(){pausesound();elem.addClass('paused');}, gap);
-				}
+				//}
 						    	
 		    	if($(event.target).is($(this))){
 			    	var urlImg= $(this).attr('src');
@@ -2104,8 +2104,12 @@
 												$('#'+pieID).animate({opacity:0},200,function(){
 													clearTimeout(setT);
 													setT = setTimeout(canvasLoader,easedTime);
-													nextSlide();
-													opts.onStartLoading.call(this);
+													if (autoAdv == true) {
+														nextSlide();
+													}
+													opts.onStartLoading.call(this);	
+													currentSecond=parseFloat($('li.cameracurrent').attr('data-sound'));
+													console.log(currentSecond)
 												});
 											}
 										}
@@ -2265,8 +2269,10 @@
 			
 				if($(nextNav).length){
 					$(nextNav).click(function(){
+						
 						window.changeSound = true;
 						if(!elem.hasClass('camerasliding')){
+							
 							clearTimeout(pause_audio);
 							pausesound();
 							var idNum = parseFloat($('.cameraSlide.cameracurrent',target).index()); 
@@ -2338,13 +2344,11 @@
 				if($(thumbs).length) {
 
 					$('.pix_thumb img',thumbs).click(function(){
-						pausesound();
-						window.changeSound = true; 
+						
 						if(!elem.hasClass('camerasliding')){
 							var idNum = parseFloat($(this).parents('li').index());
 							var curNum = parseFloat($('.cameracurrent',target).index());
 							if(idNum!=curNum) {
-								//console.log('cleartiemout')
 								clearTimeout(pause_audio);
 								pausesound();
 								clearInterval(u);
@@ -2356,7 +2360,7 @@
 								nextSlide(idNum+1);
 								thumbnailPos();
 								opts.onStartLoading.call(this);
-							}
+							}  
 						}
 					});
 
