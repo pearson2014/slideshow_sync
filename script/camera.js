@@ -2109,7 +2109,7 @@
 													}
 													opts.onStartLoading.call(this);	
 													currentSecond=parseFloat($('li.cameracurrent').attr('data-sound'));
-													console.log(currentSecond)
+													
 												});
 											}
 										}
