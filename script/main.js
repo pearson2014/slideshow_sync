@@ -1,6 +1,7 @@
 var zoom='';
 var audio='';
 var loop=0;
+var loopsound="";
 var endSound= '';
 var endReplay= true;
 var thumbnail = '';
@@ -45,11 +46,10 @@ $(document).ready(function(){
 	var json=$.getUrlVar('json');
 	var impostazioniData, slideData;
 	$.when(
-		$.getJSON('script/'+json+'.json', function(data) {
-	        slideData = data;
-	    }),
+		
 	    $.getJSON('script/'+json+'_param.json', function(data) {
-	        impostazioniData = data;
+	        impostazioniData = data.parametri;
+			slideData = data.elementi;
 	    })
 	).then(function() {
 		if (slideData) {
@@ -125,9 +125,9 @@ $(document).ready(function(){
 				  if (fx == "flowChart") {
 				    fx = "simpleFade";
 				  }
-				/*if (tipoProgetto == "No-Sync-Slide-Show") {
-					playsound(); 
-				  }*/
+				if (tipoProgetto == "No-Sync-Slide-Show") {
+					loopsound=true;
+				  }
 		        window.changeSound = false;
 				
 				jQuery('#camera_wrap_4').camera({
@@ -143,7 +143,7 @@ $(document).ready(function(){
 					info: dida,
 					autoAdvance: autoplay,
 					onStartTransition: function() { 
-					if (tipoProgetto != "No-Sync-Slide-Show") {
+							if (tipoProgetto != "No-Sync-Slide-Show") {
 						
 								clearTimeout(pause_audio);
 								currentSecond = parseFloat($('li.cameracurrent').attr('data-sound')); 
@@ -162,16 +162,32 @@ $(document).ready(function(){
 									
 									playsound(currentSecond);
 								}else {
+									console.log('pause sound')
 									pausesound(currentSecond);
 								}
 						 
 					
-					   } else {
-						if (loop == 0) {
-						playsound();
-						loop=1;
+					  } 
+					}, onEndTransition: function () {
+						if (tipoProgetto == "No-Sync-Slide-Show") {
+								console.log(loop)
+								if (loop == 0) {
+								
+								currentSecond = parseFloat($('li.cameracurrent').attr('data-sound')); 
+								if (isNaN(currentSecond)) {currentSecond = 0;}
+								console.log(currentSecond)
+								if ($('.camera_play').css('display') == 'none' || ($('#jquery_jplayer_1').data().jPlayer.status.paused == false)){
+									
+									
+									setTimeout(function(){playsound(currentSecond);},500)
+									
+								}else {
+									
+									pausesound(currentSecond);
+								}
+								loop=1;
+							}
 						}
-					   }
 					}
 				});
 				
@@ -188,17 +204,22 @@ $(document).ready(function(){
 			      supplied: "mp3,oga",
 			      solution:"html,flash",
 			      wmode:"window",
-			      volumeBar: ".jp-volume-bar"/*
-,
+			      volumeBar: ".jp-volume-bar",
+
 			      ended : function(){
 		            console.log("ended");
-		            $(this).jPlayer("playHead",100);
-		            $('.camera_wrap .camera_src').addClass('paused');
+					if (loopsound == true) {console.log('loopsound'); playsound();$("#jquery_jplayer_1").jPlayer('play')}
+		           // $(this).jPlayer("playHead",100);
+		           // $('.camera_wrap .camera_src').addClass('paused');
 		            }
-*/
+
 			  });
 			  
 			  if(endSound == true){
+				  if (loopsound == true) {
+					playsound();
+				  }
+				  else {
 				  $("#jquery_jplayer_1").on($.jPlayer.event.ended, function() {
 				    $('.camera_wrap .camera_src').addClass('paused');
 				    if(endReplay == true) {
@@ -218,6 +239,9 @@ $(document).ready(function(){
 				  $("#jquery_jplayer_1").on($.jPlayer.event.playing, function() {
 				  	$('.camera_wrap .camera_src').removeClass('paused');
 				  });
+				  
+				  
+				  }
 			  }
 			  
 			  $('.camera_thumbs_cont').css("background", coloreSfondo);
@@ -245,12 +269,14 @@ $(document).ready(function(){
 	    }
 	});
       
-    $('.main_bar').on('click', '.camera_play', function(){					
+    $('.main_bar').on('click', '.camera_play', function(){		
+		
        var gap= (parseFloat($('li.cameracurrent').next().attr('data-sound')) - parseFloat($('#jquery_jplayer_1').data().jPlayer.status.currentTime)) * 1000;	
         playsound($('#jquery_jplayer_1').data().jPlayer.status.currentTime);	
         $("#jquery_jplayer_1").jPlayer("play");
-		pause_audio=setTimeout(function(){pausesound();}, gap);
-		
+		if (loopsound == false) {
+		pause_audio=setTimeout(function(){ console.log('pause sound 7');pausesound();}, gap);
+		}
     });
 
    $('.main_bar').on('click', '.camera_stop', function(){			
@@ -271,14 +297,19 @@ $( window ).resize(function() {
 
 function playsound (t){
   currentSecond = parseFloat(t);
+ 
   $("#jquery_jplayer_1").jPlayer("stop");
 
-  if (t==0)
+  if (t==0) {
+   console.log(currentSecond + " t = 0")
     $("#jquery_jplayer_1").jPlayer("play");
-  else 
+	
+	}
+  else { 
     $("#jquery_jplayer_1").jPlayer("play", currentSecond);
-    
+    }
     //console.log(currentSecond);
+	
 }
     
 function pausesound (t){

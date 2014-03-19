@@ -406,7 +406,7 @@
 				if (isNaN(currentSecond))
 					currentSecond = 0;
 					setTimeout(function(){playsound(currentSecond);}, 750);
-					//console.log(currentSecond);
+					
 			},1500); 
 		}
 	});
@@ -860,7 +860,7 @@
 			        //playsound($('#jquery_jplayer_1').data().jPlayer.status.currentTime);	
 			        //$("#jquery_jplayer_1").jPlayer("play");
 					
-					pause_audio=setTimeout(function(){pausesound();}, gap);
+					pause_audio=setTimeout(function(){pausesound();console.log('pause sound 3');}, gap);
 					elem.removeClass('paused');
 				}
 
@@ -875,7 +875,7 @@
 	    		//if(autoAdv == true){
 					clearTimeout(pause_audio);
 					var gap= (parseFloat($('li.cameracurrent').next().attr('data-sound')) - parseFloat($('#jquery_jplayer_1').data().jPlayer.status.currentTime)) * 1000;	
-					pause_audio=setTimeout(function(){pausesound();elem.addClass('paused');}, gap);
+					pause_audio=setTimeout(function(){pausesound();elem.addClass('paused'); console.log('pause sound 6');}, gap);
 				//}
 						    	
 		    	if($(event.target).is($(this))){
@@ -2250,8 +2250,11 @@
 						//alert('entra');
 						window.changeSound = true; 
 						if(!elem.hasClass('camerasliding')){
+							if (loopsound == false) {
 							clearTimeout(pause_audio);
+							console.log('pause sound 4');
 							pausesound();
+							}
 							var idNum = parseFloat($('.cameraSlide.cameracurrent',target).index());
 							clearInterval(u);
 							imgFake();
@@ -2274,7 +2277,10 @@
 						if(!elem.hasClass('camerasliding')){
 							
 							clearTimeout(pause_audio);
+							console.log('pause sound 1')
+							if (loopsound == false) {
 							pausesound();
+							}
 							var idNum = parseFloat($('.cameraSlide.cameracurrent',target).index()); 
 							clearInterval(u);
 							imgFake();
@@ -2350,7 +2356,10 @@
 							var curNum = parseFloat($('.cameracurrent',target).index());
 							if(idNum!=curNum) {
 								clearTimeout(pause_audio);
+								console.log('pause sound 2');
+								if (loopsound == false) {
 								pausesound();
+								}
 								clearInterval(u);
 								imgFake();
 								$('#'+pieID+', .camera_canvas_wrap',camera_thumbs_wrap).animate({opacity:0},0);
