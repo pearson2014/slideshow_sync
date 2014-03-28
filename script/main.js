@@ -43,11 +43,15 @@ var pause_audio=""; // variabile per clearTimeout
 
 
 $(document).ready(function(){
-	var json=$.getUrlVar('json');
+	//var json=document.location.href.split('/');
+	//json=json[json.length-2];
+	//console.log(json);
+	//var json=$.getUrlVar('json');
 	var impostazioniData, slideData;
 	$.when(
 		
-	    $.getJSON('script/'+json+'_param.json', function(data) {
+//	    $.getJSON('json/'+json+'.json', function(data) {
+		$.getJSON('json/'+json_name+'.json', function(data) {
 	        impostazioniData = data.parametri;
 			slideData = data.elementi;
 	    })
@@ -139,7 +143,7 @@ $(document).ready(function(){
 					mobileNavHover: false,
 					opacityOnGrid: false,
 					fx: transition,
-					imagePath: '../images/',
+					imagePath: 'images/',
 					info: dida,
 					autoAdvance: autoplay,
 					onStartTransition: function() { 
@@ -246,7 +250,7 @@ $(document).ready(function(){
 			  
 			  $('.camera_thumbs_cont').css("background", coloreSfondo);
 			  $('body').css("background", coloreSfondo);
-			  document.title = titoloProgetto;
+			  document.title = windowTitle;
 			  
 			  if (thumbnail == false) {
 			    $('#camera_wrap_4').css('marginBottom', '0px');
@@ -270,6 +274,7 @@ $(document).ready(function(){
 	});
       
     $('.main_bar').on('click', '.camera_play', function(){		
+		console.log(window.changeSound)
 		if (window.changeSound == false) {
 			var gap= (parseFloat($('li.cameracurrent').next().attr('data-sound')) - parseFloat($('#jquery_jplayer_1').data().jPlayer.status.currentTime)) * 1000;	
 			playsound($('#jquery_jplayer_1').data().jPlayer.status.currentTime);	
@@ -290,6 +295,8 @@ $(document).ready(function(){
    $('.main_bar').on('click', '.camera_stop', function(){			
 		clearTimeout(pause_audio)
 	    pausesound();			
+		window.changeSound = false;
+		
     });
 	
 });

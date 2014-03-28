@@ -7,7 +7,7 @@
 		alignment			: 'center', //topLeft, topCenter, topRight, centerLeft, center, centerRight, bottomLeft, bottomCenter, bottomRight
 		
 		
-		autoAdvance			: true,	//true, false
+		autoAdvance			: true,	//true, falseS
 		
 		mobileAutoAdvance	: true, //true, false. Auto-advancing for mobile devices
 		
@@ -891,7 +891,8 @@
 							var wH= $(window).height()-20;
 							$('.wrap-img .cont-img').height(wH);
 							$(".panzoom").panzoom({
-								contain: 'invert'
+								contain: 'invert',
+								cursor: 'pointer'
 							});
 						}
 					});

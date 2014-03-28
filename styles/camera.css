@@ -55,7 +55,7 @@
 	width: 100%;
 }
 body.zoom-pan .cameraSlide img {
-	cursor: pointer;
+	cursor: zoom-in;
 }
 .cameraContent {
 	bottom: 0;
